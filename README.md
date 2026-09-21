@@ -1,47 +1,44 @@
 ![katoolin](https://cloud.githubusercontent.com/assets/8742190/9415562/83397aae-4840-11e5-8f72-28dfffcc70a9.png)
 # katoolin
-Automatically install all Kali linux tools
 
-# Features
-- Add Kali linux repositories
-- Remove kali linux repositories
-- Install Kali linux tools
+Automatically install and manage Kali Linux tools on Debian/Ubuntu-based systems. Maintained and hardened by PreCog Security.
 
-# Requirements
-- Python 2.7
-- An operating system (tested on Ubuntu)
+## Features
+- Add Kali Linux repositories & GPG keys
+- Remove Kali Linux repositories cleanly
+- View sources.list contents
+- Install Kali Linux tools and categories
+- Fully modular Python 3 architecture with automated test suite
 
-# Installation
-- sudo su
-- git clone https://github.com/LionSec/katoolin.git && cp katoolin/katoolin.py /usr/bin/katoolin
-- chmod +x /usr/bin/katoolin
-- sudo katoolin 
+## Requirements
+- Python >= 3.8
+- Debian / Ubuntu / Kali Linux (tested on Ubuntu)
+- Root / sudo privileges for repository management and tool installation
 
-# Video
-https://www.youtube.com/watch?v=8VxCWVoZEEE
+## Architecture
+Katoolin is structured into modular components:
+- `katoolin/cli.py`: Interactive command-line interface and menu system.
+- `katoolin/repo_manager.py`: Safe parsing and management of `/etc/apt/sources.list`.
+- `katoolin/installer.py`: Package installation and execution helper.
+- `tests/`: Automated unit tests (`pytest`).
 
-# Usage
-- Typing the number of a tool will install it
-- Typing 0 will install all Kali Linux tools
-- back : Go back
-- gohome : Go to the main menu
-- By installing armitage , you will install metasploit
+## Installation & Usage
+```bash
+sudo su
+git clone https://github.com/PreCogSecurity/katoolin.git
+cd katoolin
+pip install .
+sudo katoolin
+```
 
-# Warning
-Before updating your system , please remove all Kali-linux repositories to avoid any kind of problem .
+## Running Tests
+```bash
+pip install -r requirements-dev.txt
+pytest -v
+```
 
-# I have some questions!
+## Warning
+Before updating your system, please remove all Kali Linux repositories to avoid package conflicts or dependency issues.
 
-Please visit https://github.com/LionSec/katoolin/issues
-
-# Donations
-- Paypal : https://www.paypal.me/lionsec
-- skrill : informatica98es@gmail.com
-
-
-# Contact
-- Website : http://lionsec.net
-- Youtube : https://youtube.com/inf98es
-- Facebook : https://facebook.com/in98
-- Twitter: @LionSec1
-- Email : ledonman@gmail.com
+## License
+Distributed under the MIT License. See `LICENSE` for details.

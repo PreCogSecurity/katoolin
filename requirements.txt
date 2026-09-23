@@ -1,0 +1,2 @@
+# Katoolin runtime requirements
+# Minimal dependencies; relies primarily on standard library and system apt tools.
